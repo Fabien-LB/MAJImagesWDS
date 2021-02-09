@@ -2,9 +2,7 @@
 
 $configFile = Import-PowerShellDataFile -Path "C:\scripts\Conf.psd1" -ErrorAction Stop
 
-$MountISO = Mount-DiskImage -ImagePath "$($configFile.Arborescence.LETTRELECTEUR)$($configFile.Arborescence.CHEMINISO)" -StorageType ISO -PassThru
-
-$LetterISO = ($MountISO | Get-Volume).DriveLetter + ':'
+$LetterISO = ( Mount-DiskImage -ImagePath "$($configFile.Arborescence.LETTRELECTEUR)$($configFile.Arborescence.CHEMINISO)" -StorageType ISO -PassThru | Get-Volume).DriveLetter + ':'
 
 # Récupérer les mises à jour du serveur WSUS
 
