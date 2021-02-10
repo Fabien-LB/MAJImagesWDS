@@ -1,4 +1,5 @@
-﻿try
+﻿# Pour les explications relatives à ce "try catch" voir ligne 80
+try
 {
 # Variable contenant le chemin vers le fichier de configuration
 
@@ -75,7 +76,11 @@ wdsutil /Verbose /Progress /add-Image /imageFile:"$($configFile.Arborescence.LET
 
 Dismount-DiskImage -ImagePath "$($configFile.Arborescence.LETTRELECTEUR)$($configFile.Arborescence.ISOPATH)"
 }
+
+# Ce "try catch" parent englobe tout le script afin de rediriger les erreurs, dans un fichier, des "try catch" enfants appellés par les fonctions, mais aussi les possibles erreurs systèmes non gérées par les fonctions
 catch
 {
-    throw $PSItem.Exception.Message |Out-File "D:\test.txt"
+
+        get-date -Format "[yyyy-MM-dd HH:mm:ss]"  | Out-File "D:\test.txt" -Append
+        throw $PSItem.Exception.Message | Out-File "D:\test.txt" -Append
 }
