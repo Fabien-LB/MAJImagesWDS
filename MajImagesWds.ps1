@@ -2,19 +2,21 @@
 
 Remove-Variable * -ErrorAction SilentlyContinue; Remove-Module *; $error.Clear(); Clear-Host
 
+$date = get-date -Format "[yyyy-MM-dd HH:mm:ss] "
+
+# Variable permettant d'appeler les constantes du fichier de configuration
+
+$confPath = "C:\scripts\ConfWds.psd1"
+
+$configFile = Import-PowerShellDataFile -Path $confPath -ErrorAction Stop
+
 # Fonction qui va créer, si il n'existe pas, un fichier de log où les messages d'erreurs seront redirigés
 
 ArborescenceWdsLOGPATH
 
-# Pour les explications relatives à ce "try catch" voir ligne 96-97
+# Pour les explications relatives à ce "try catch" voir lignes 96-97
 try
 {
-
-# Variable permettant d'appeler les constantes du fichier de configuration
-
-$confPath = "C:\scripts\Conf.psd1"
-
-$configFile = Import-PowerShellDataFile -Path $confPath -ErrorAction Stop
 
 # Vérifie si le service WDS est bien installé sur ce serveur
 
@@ -42,15 +44,13 @@ WsusIP
 
 WsusMAJFOLDER
 
-WsusMAJPATH
+WsusMAJFOLDERSHARE
 
 WDSGROUPEIMAGE
 
 WDSGROUPEIMAGEPATH
 
 # Fin de l'appel des fonctions de gestion d'erreurs
-
-$date = get-date -Format "[yyyy-MM-dd HH:mm:ss] "
 
 # Montage de l'ISO et récupération de sa lettre de lecteur
 

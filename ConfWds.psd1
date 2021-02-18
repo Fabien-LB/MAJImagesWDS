@@ -30,7 +30,7 @@
 <#      Chemin d'accès à l'image ISO qui souhaite être déployée
         Doit obligatoirement commencer par une barre oblique inversée (\) et contenir AU MINIMUM un dossier ET doit avoir à la fin une extension en .iso 
 #>
-        FONCTIONPATH = "C:\Program Files\WindowsPowerShell\Modules\functiontest\functiontest.psm1"
+        FONCTIONPATH = "C:\Program Files\WindowsPowerShell\Modules\functionWds\functionWds.psm1"
 <#      Chemin menant au fichier module (d'extension .psm1) contenant les fonctions
         La chaîne de caractère suivante est toujours placée au début et ne doit être changée: "C:\Program Files\WindowsPowerShell\Modules\". Elle correspond au chemin de stockage par défaut des fichiers modules PowerShell (.psm1)
         Le dossier contenant le fichier module doit avoir le même nom que le fichier module (extension non incluse) 
@@ -60,7 +60,7 @@
 #>
                 }
 
-        WDSGROUPIMAGE = "a"
+        WDSGROUPIMAGE = "Test Final"
 <#      Définit le nom du groupe d'image WDS qui recevra les images du fichier install.wim
         Ne peut pas être un nom déjà existant
 #>

@@ -58,7 +58,7 @@ function ArborescenceWsusLETTRELECTEUR
     try 
     { 
 
-        if (!($($configFile.ArborescenceWds.LETTRELECTEUR) -match $pattern)) 
+        if (!($($configFile.ArborescenceWsus.LETTRELECTEUR) -match $pattern)) 
         {
             throw "Erreur : La syntaxe de la lettre de lecteur n'est pas la bonne. Vérifier la valeur de ArborescenceWsus.LETTRELECTEUR dans le fichier de configuration."
         }
@@ -76,14 +76,14 @@ function ArborescenceWsusLETTRELECTEUR
 function ArborescenceWsusMAJFOLDER
 {
     ConfPath
-    $pattern = '^(\\)([^<>:“\/\\|?,*\. ]+)(\\)([^<>:“\/\\|?,*\. ]+)$'
+    $pattern = '^(\\)([^<>:“\/\\|?,*\. ]+)(\\)([^<>:“\/\\|?,*\. ]+)$|^(\\)([^<>:“\/\\|?,*\. ]+)$'
 
     try 
     { 
 
-        if (!($($configFile.Wsus.MAJFOLDER) -match $pattern)) 
+        if (!($($configFile.ArborescenceWsus.MAJFOLDER) -match $pattern)) 
         {
-            throw "Erreur : La syntaxe du dossier contenant les mises à jour sur le serveur WSUS n'est pas bonne. Vérifier la valeur de Wsus.MAJFOLDER dans le fichier de configuration."
+            throw "Erreur : La syntaxe du dossier contenant les mises à jour téléchargées n'est pas bonne. Vérifier la valeur de Wsus.MAJFOLDER dans le fichier de configuration."
         }
         
     }
@@ -96,14 +96,14 @@ function ArborescenceWsusMAJFOLDER
     
 }
 
-function ArborescenceWsusMAJPATH
+function ArborescenceWsusMAJEXTENSION
 {
     ConfPath
     $pattern = '^(\*\.cab)$|^(\*\.msu)$'
 
     try 
     {       
-        if(!($($configFile.Wsus.MAJPATH) -match $pattern))
+        if(!($($configFile.ArborescenceWsus.MAJEXTENSION) -match $pattern))
             {
             throw "Erreur : la syntaxe de l'extension du fichier de mise à jour n'est pas bonne. Vérifier la valeur de ArborescenceWsus.MAJEXTENSION dans le fichier de configuration."
             }
@@ -113,6 +113,29 @@ function ArborescenceWsusMAJPATH
     { 
             throw $PSItem.Exception.Message + " (Emplacement : $confPath)"
     }
+}
+
+function ArborescenceWsusMAJFOLDERSHARE
+{
+    ConfPath
+    $pattern = '^(\\)([^<>:“\/\\|?,*\. ]+)$'
+
+    try 
+    { 
+
+        if (!($($configFile.ArborescenceWsus.MAJFOLDERSHARE) -match $pattern)) 
+        {
+            throw "Erreur : La syntaxe du dossier contenant les fichiers de mises à jour requis par WDS n'est pas bonne. Vérifier la valeur de Wsus.MAJFOLDERSHARE dans le fichier de configuration."
+        }
+        
+    }
+
+    catch 
+    {
+        throw $PSItem.Exception.Message + " (Emplacement : $confPath)"
+
+    }
+    
 }
 
 function ArborescenceWsusLOGPATH

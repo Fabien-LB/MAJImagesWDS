@@ -2,20 +2,22 @@
 
 Remove-Variable * -ErrorAction SilentlyContinue; Remove-Module *; $error.Clear(); Clear-Host
 
-# Fonction qui va créer, si il n'existe pas, un fichier de log où les messages d'erreurs seront redirigés
-
-ArborescenceWsusLOGPATH
-
-# Pour les explications relatives à ce "try catch" voir ligne 99-100
-
-try
-{
+$date = get-date -Format "[yyyy-MM-dd HH:mm:ss] "
 
 # Variable permettant d'appeler les constantes du fichier de configuration
 
 $confPath = "C:\Users\Administrateur\Documents\GitHub\MAJImagesWDS\confWsus.psd1"
 
 $configFile = Import-PowerShellDataFile -path $confPath -ErrorAction Stop
+
+# Fonction qui va créer, si il n'existe pas, un fichier de log où les messages d'erreurs seront redirigés
+
+ArborescenceWsusLOGPATH
+
+# Pour les explications relatives à ce "try catch" voir lignes 101-102
+
+try
+{
 
 # Vérifie si le service WSUS est bien installé sur le serveur
 
@@ -37,11 +39,11 @@ ArborescenceWsusLETTRELECTEUR
 
 ArborescenceWsusMAJFOLDER
 
-ArborescenceWsusMAJPATH
+ArborescenceWsusMAJEXTENSION
+
+ArborescenceWsusMAJFOLDERSHARE
 
 # Fin de l'appel des fonctions de gestion d'erreurs
-
-$date = get-date -Format "[yyyy-MM-dd HH:mm:ss] "
 
 # Début de la synchronisation WSUS
 
@@ -67,6 +69,7 @@ Get-WsusUpdate -Classification All -Approval Declined | ? {$_.Update.ProductTitl
 Get-WsusUpdate -Classification All -Approval AnyExceptDeclined | ? {$_.Update.ProductTitles -like  "*" + $($configFile.OSVERSION) + "*"} | ? {$_.Update.Title -like "*" + $($configFile.OSARCHITECTURE) + "*"} | ? {$_.Update.IsSuperseded -eq $false} | Approve-WsusUpdate -TargetGroupName "Tous les ordinateurs" -Action Install
 
 # Le téléchargement des mises à jour n'est pas toujours immédiat, le script se stop donc 20 secondes le temps que le téléchargement commence
+
 Start-Sleep -Seconds 20
 
 # Cette boucle permet de s'assurer que le script ne continuera pas sa progression tant que le téléchargement des mises à jour n'est pas terminé

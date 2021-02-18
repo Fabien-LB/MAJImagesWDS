@@ -1,6 +1,6 @@
 function ConfPath
 {
-    $confPath = "C:\scripts\Conf.psd1"
+    $confPath = "C:\scripts\ConfWds.psd1"
     $configFile = Import-PowerShellDataFile -Path $confPath -ErrorAction Stop
 }
 
@@ -214,13 +214,13 @@ function WsusMAJFOLDER
     
 }
 
-function WsusMAJPATH
+function WsusMAJFOLDERSHARE
 {
     ConfPath
     $pattern = '^(\\)([^<>:“\/\\|?,*\. ]+)$'
     try 
     {       
-        if(!($($configFile.Wsus.MAJPATH) -match $pattern))
+        if(!($($configFile.Wsus.MAJFOLDERSHARE) -match $pattern))
             {
             throw "Erreur : la syntaxe du dossier contenant les fichiers de mises à jour (.cab et .msu) n'est pas bonne. Vérifier la valeur de Wsus.MAJFOLDERSHARE dans le fichier de configuration. "
             }

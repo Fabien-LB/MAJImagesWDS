@@ -41,7 +41,7 @@
         Doit obligatoirement commencer par une lettre de lecteur ET avoir finir par un fichier en extension .txt 
 #>
 
-        FONCTIONPATH = "C:\Program Files\WindowsPowerShell\Modules\FunctionTestWsus\FunctionTestWsus.psm1"
+        FONCTIONPATH = "C:\Program Files\WindowsPowerShell\Modules\FunctionWsus\FunctionWsus.psm1"
 <#      Chemin menant au fichier module (d'extension .psm1) contenant les fonctions
         La chaîne de caractère suivante est toujours placée au début et ne doit être changée: "C:\Program Files\WindowsPowerShell\Modules\". Elle correspond au chemin de stockage par défaut des fichiers modules PowerShell (.psm1)
         Le dossier contenant le fichier module doit avoir le même nom que le fichier module (extension non incluse)
