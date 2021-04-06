@@ -35,4 +35,4 @@ Une fois cela effectué le poste qui sera déployé avec l’image Install.wim q
 
 ## Installation
 
-Pour bien installer les scripts voir la [![Documentation Technique](https://github.com/Fabien-LB/MAJImagesWDS/blob/main/Documentation%20Technique.pdf)]
+Pour bien installer les scripts voir la [Documentation Technique](https://github.com/Fabien-LB/MAJImagesWDS/blob/main/Documentation%20Technique.pdf)
