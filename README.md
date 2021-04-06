@@ -12,7 +12,7 @@
 
 Ce projet a été réalisé, et est présent ici sous sa version finale, durant les mois de Janvier et Février 2021 durant mon stage de deuxième année de BTS SIO.
 
-Le but étant de pouvoir mettre à jour des images de déploiement WDS de manière automtique.
+Le but étant de pouvoir mettre à jour des images de déploiement WDS de manière automatique.
 
 Pour assurer un résultat probant, les scripts du serveur WSUS doivent être lancés en premier et, une fois finis d'exécuter, les scripts du serveur WDS peuvent être lancés.
 
