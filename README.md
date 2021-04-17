@@ -30,7 +30,7 @@ Le serveur WSUS va servir de « repository » de KB (Knowledge Base) et ainsi st
 
 Le serveur WDS va donc monter l’image Install.wim présente sur son banc de déploiement accéder au partage sur le serveur WSUS et ainsi injecter les KB dans l’image Install.wim.
 
-Une fois cela effectué le poste qui sera déployé avec l’image Install.wim qui aura reçu les KB sera totalement à jour (aucun démarrage requis) et sera à la dernière version de Windows 10
+Une fois cela effectué le poste qui sera déployé avec l’image Install.wim qui aura reçue les KB sera totalement à jour (aucun démarrage requis) et sera à la dernière version de Windows 10
 
 
 ## Installation
