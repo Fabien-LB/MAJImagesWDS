@@ -76,7 +76,7 @@ function ArborescenceWsusLETTRELECTEUR
 function ArborescenceWsusMAJFOLDER
 {
     ConfPath
-    $pattern = '^(\\)([^<>:“\/\\|?,*\. ]+)(\\)([^<>:“\/\\|?,*\. ]+)$|^(\\)([^<>:“\/\\|?,*\. ]+)$'
+    $pattern = '^(\\)([^<>:“\/\\|?,*\. ]+)(\\)([^<>:“\/\\|?,*\. ]+)$|^(\\)([^<>:“\/\\|?,*\. ]+)(\\)$'
 
     try 
     { 

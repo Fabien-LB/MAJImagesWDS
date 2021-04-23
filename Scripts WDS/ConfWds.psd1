@@ -44,7 +44,7 @@
         Wsus = @{
         # Le script récupère les mises à jour sur un serveur WSUS distant où un partage aura au préalable été monté
 
-        IP  = "192.168.12.108"
+        IP  = "0.0.0.0"
 <#      Adresse IP du serveur WSUS
         Doit respecter le format d'une adresse IPV4
 #>

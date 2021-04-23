@@ -19,9 +19,9 @@
         La lettre C est exclu pour éviter de manipuler les images sur la partition système
 #>
 
-        MAJFOLDER = "\WsusServer\WsusContent"
+        MAJFOLDER = "\WsusContent\"
 <#      Emplacement du dossier qui stocke les mises à jour téléchargées, le nom de base de ce dossier lors de l'installation de WSUS est "WsusContent"
-        Doit obligatoirement commencer par une barre oblique inversée (\)
+        Doit obligatoirement commencer ET terminer par une barre oblique inversée (\)
         Si un dossier racine a été spécifié lors de l'installation de WSUS il doit être rensigné ici
 #>
 
