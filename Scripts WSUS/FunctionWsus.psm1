@@ -118,7 +118,7 @@ function ArborescenceWsusMAJEXTENSION
 function ArborescenceWsusMAJFOLDERSHARE
 {
     ConfPath
-    $pattern = '^(\\)([^<>:“\/\\|?,*\. ]+)$'
+    $pattern = '^([^<>:“\/\\|?,*\. ]+)$'
 
     try 
     { 

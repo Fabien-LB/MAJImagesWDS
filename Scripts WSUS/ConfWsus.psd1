@@ -30,9 +30,8 @@
         Doit obligatoirement commencer par un asterisk (*) suivi d'une extension valide (.cab ou .msu)      
 #>
 
-        MAJFOLDERSHARE = "\WsusPartage"
+        MAJFOLDERSHARE = "WsusPartage"
 <#      Dossier où WDS vient prendre les mises à jour pour les injecter aux images
-        Un seul dossier doit être spécifié, doit obligatoirement commencer par une barre oblique inversée (\)
         Le nom du dossier doit être le même que celui renseigné dans la constante Wsus.MAJFOLDERSHARE du fichier de configuration du serveur WDS
 #>
 
