@@ -20,7 +20,7 @@ Pour assurer un résultat probant, les scripts du serveur WSUS doivent être lan
 
 Ce projet a été réalisé dans un domaine Windows qui comprenait :
 
-- Un contrôleur de domaine AD/DHCP
+- Un contrôleur de domaine AD
 - Un serveur WDS
 - Un serveur WSUS
 
